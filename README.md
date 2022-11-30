@@ -1,4 +1,4 @@
-# AdventOfCodeBase
+# AdventOfCodeBase (https://adventofcode.com/2022)
 Template project for solving Advent of Code in C#, running on [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0).
 
 - [Features](#features)
