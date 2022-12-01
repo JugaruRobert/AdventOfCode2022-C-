@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+
 namespace AdventOfCode.Solutions.Utils;
 
 public static class StringUtils
@@ -9,15 +12,15 @@ public static class StringUtils
         return new string(arr);
     }
 
-    public static string[] SplitByNewline(this string str, bool shouldTrim = false) => str
+    public static string[] SplitByNewline(this string str, bool keepEmptyLines = false, bool shouldTrim = false) => str
         .Split(new[] { "\r", "\n", "\r\n" }, StringSplitOptions.None)
-        .Where(s => !string.IsNullOrWhiteSpace(s))
+        .Where(s => keepEmptyLines || !string.IsNullOrWhiteSpace(s))
         .Select(s => shouldTrim ? s.Trim() : s)
         .ToArray();
 
-    public static string[] SplitByParagraph(this string str, bool shouldTrim = false) => str
+    public static string[] SplitByParagraph(this string str, bool keepEmptyLines = false, bool shouldTrim = false) => str
         .Split(new[] { "\r\r", "\n\n", "\r\n\r\n" }, StringSplitOptions.None)
-        .Where(s => !string.IsNullOrWhiteSpace(s))
+        .Where(s => keepEmptyLines || !string.IsNullOrWhiteSpace(s))
         .Select(s => shouldTrim ? s.Trim() : s)
         .ToArray();
 

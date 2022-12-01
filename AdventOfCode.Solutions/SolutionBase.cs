@@ -8,6 +8,8 @@ global using AdventOfCode.Solutions.Utils;
 using System.Diagnostics;
 using System.Net;
 using AdventOfCode.Services;
+using System.IO;
+using System.Net.Http;
 
 namespace AdventOfCode.Solutions;
 
